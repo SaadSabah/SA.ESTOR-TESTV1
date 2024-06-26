@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Show-Hand-Made-Products";
+}
+
+<div class="container  p-xxl-5 mt-xl-5">
+    <h1></h1>
+</div>
+
+<div class="container text-decoration-underline mt-5">
+    <h1 id="handmadstor" class="text-center p-lg-5">HandMade<p>Products</p></h1>
+
+    <div class="container p-5">
+    </div>
+
+</div>
+
+<div class="container bg-info border-primary p-5">
+    <div class="container-xxl border-3">
+        <div class="row">
+            @foreach (var hmproduct in Model)
+            {
+                <div class="col-md-4 mb-4 ">
+                    <div class="card h-100" data-aos="fade-up" data-aos-duration="800">
+                        <img src="/HandMade-IMGs/@hmproduct.ImageFileName" class="card-img-top mt-4 img-thumbnail" style="width: 100%; height: 50%;" alt="Product Image">
+                        <h5 class="card-title text-center mt-4 img-thumbnail">@(hmproduct.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
+                        <p class="card-text text-center">@hmproduct.Brand</p>
+                        <p class="card-text text-center text-capitalize">@hmproduct.Name</p>
+                        <div class="border-3">
+                            <p class="card-text text-center">@hmproduct.Description</p>
+
+                        </div>
+                        <p class="text-info text-capitalize mt-4 text-center">
+                            Send an email to the salesman
+                        </p>
+                        <div class="text-center">
+                            <a href="mailto:@hmproduct.Email">@hmproduct.Email</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+    });
+</script>
+

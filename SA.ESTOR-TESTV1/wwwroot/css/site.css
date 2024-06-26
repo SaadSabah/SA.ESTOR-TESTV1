@@ -1,0 +1,69 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+#logo:hover {
+    opacity: 0.8;
+    transform: rotate(10deg); /* Rotate the logo by 10 degrees */
+    color: #3498db;
+}
+
+.nav-link {
+    position: relative;
+    
+}
+
+    .nav-link::after {
+        opacity: 0;
+        transition: all 0.2s;
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        opacity: 1;
+        height: 2px;
+        width: 100%;
+        background-color: greenyellow;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    #card-products:hover{
+        transform: scale(1.1);
+    }
+
+    #show-p-h1{
+        font-size:100px;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    #show-p-h1:hover{
+        transform:scale(1.1);
+    }
+
+    /************************************/
+#handmadstor:hover
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transform:scale(1.1);
+}
+
