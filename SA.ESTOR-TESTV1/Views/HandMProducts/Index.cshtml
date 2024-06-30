@@ -2,7 +2,7 @@
 @{
 }
 
-
+<h1>only admin can see this</h1>
 
 <h2 class="text-center m-5">HandMade Products</h2>
 
@@ -19,7 +19,7 @@
 
 	<div class="table-responsive">
 
-		<table class=" table table-bordered table-hover table-success">
+		<table class=" table table-bordered table-hover table-success ">
 			<thead>
 				<tr>
 					@if (User.IsInRole("Adminplus"))
@@ -76,7 +76,18 @@
 
 
 						<td><a href="mailto:@product.Email">@product.Email</a></td>
-						<td><a href="tel:@product.PhoneNumber">@product.PhoneNumber</a></td>
+						<td>
+							@if (!string.IsNullOrEmpty(product.PhoneNumber))
+							{
+								<a href="tel:@product.PhoneNumber.Replace(" ", "")">@product.PhoneNumber</a>
+							}
+							else
+							{
+								<span>Not Available</span>
+							}
+						</td>
+						@*<td><a href="tel:@product.PhoneNumber">@product.PhoneNumber</a></td>*@
+
 
 					</tr>
 				}

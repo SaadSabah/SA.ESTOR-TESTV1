@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 19px;
 }
 
 @media (min-width: 768px) {
@@ -19,6 +19,8 @@ html {
 
 body {
     margin-bottom: 60px;
+  /*  background-color:greenyellow;*/
+    border: 15px solid green;
 }
 
 #logo:hover {
@@ -67,3 +69,33 @@ body {
     transform:scale(1.1);
 }
 
+#seller-info:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease; /* Add a smooth transition */
+    color: #007bff; /* Change text color to blue on hover */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#img-products:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+#img-hmproducts:hover {
+    transform: scale(1.05);
+    transition: opacity 0.3s ease; /* Add a smooth transition */
+}
+
+#card-products:hover {
+    background-color: aquamarine;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+#card-hmproducts:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}

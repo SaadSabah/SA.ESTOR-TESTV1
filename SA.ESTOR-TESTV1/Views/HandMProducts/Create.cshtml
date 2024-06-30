@@ -48,12 +48,15 @@
 					<div class="col-sm-8">
 						<select class="from-select" asp-for="Category">
 							<option value="Other">Other</option>
-							<option value="Phones">Phones</option>
-							<option value="Computers">Computers</option>
-							<option value="Accessories">Accessories</option>
-							<option value="Printers">Printers</option>
-							<option value="Cameras">Cameras</option>
-							<option value="Video Games">Video Games</option>
+							<option value="Jewelry & Accessories">Jewelry & Accessories</option>
+							<option value="Home Decor">Home Decor</option>
+							<option value="Clothing & Apparel">Clothing & Apparel</option>
+							<option value="Bath & Body Products">Bath & Body Products</option>
+							<option value="Art & Prints">Art & Prints</option>
+							<option value="Paper Goods">Paper Goods</option>
+							<option value="Food & Beverages">Food & Beverages</option>
+							<option value="Woodworking & Furniture">Woodworking & Furniture</option>
+							<option value="Knitting & Crochet">Knitting & Crochet</option>
 						</select>
 					</div>
 				</div>
@@ -87,7 +90,7 @@
 						<button type="submit" class="btn btn-outline-success rounded-pill">Submit</button>
 					</div>
 					<div class="col-sm-4 d-grid">
-						<a class="btn btn-outline-primary rounded-pill" asp-controller="HandMProducts" asp-action="Index" role="button">
+						<a class="btn btn-outline-primary rounded-pill" asp-controller="HandMProducts" asp-action="HMProducts" role="button">
 							Cancel
 						</a>
 					</div>
