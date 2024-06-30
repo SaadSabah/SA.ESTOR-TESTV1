@@ -26,7 +26,7 @@ namespace SA.ESTOR_TESTV1.Controllers
 		public IActionResult ShowProducts()
 		{
 			var myModel = context.Products.OrderByDescending((p) => p.Id).ToList();
-			return View("ShowProducts", myModel);
+			return View("Index", myModel);
 
 		}
 

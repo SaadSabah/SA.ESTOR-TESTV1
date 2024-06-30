@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SA.ESTOR_TESTV1.Models;
+using SA.ESTOR_TESTV1.Services;
 using System.Diagnostics;
 
 namespace SA.ESTOR_TESTV1.Controllers
@@ -7,15 +8,17 @@ namespace SA.ESTOR_TESTV1.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+        
 
-		public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger)
 		{
 			_logger = logger;
+			
 		}
 
 		public IActionResult Index()
 		{
-           
+
             return View();
         }
 

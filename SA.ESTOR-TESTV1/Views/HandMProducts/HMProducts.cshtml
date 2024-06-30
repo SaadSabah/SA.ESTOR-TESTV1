@@ -6,23 +6,29 @@
     <h1></h1>
 </div>
 
-<div class="container text-decoration-underline mt-5">
+<div class="container mt-5">
     <h1 id="handmadstor" class="text-center p-lg-5">HandMade<p>Products</p></h1>
-
+    
+    
+        <div class="col p-5 my-5 border">
+            <a class="btn btn-outline-success rounded-3" asp-controller="HandMProducts" asp-action="Create">New Product</a>
+        </div>
+    
     <div class="container p-5">
+        <p id="seller-info" class="text-xxl-center text-uppercase">Communicate directly with the sellers to buy their products</p>
     </div>
 
 </div>
 
-<div class="container bg-info border-primary p-5">
+<div class="container bg-info border-primary p-5 img-thumbnail rounded-3">
     <div class="container-xxl border-3">
         <div class="row">
             @foreach (var hmproduct in Model)
             {
-                <div class="col-md-4 mb-4 ">
-                    <div class="card h-100" data-aos="fade-up" data-aos-duration="800">
-                        <img src="/HandMade-IMGs/@hmproduct.ImageFileName" class="card-img-top mt-4 img-thumbnail" style="width: 100%; height: 50%;" alt="Product Image">
-                        <h5 class="card-title text-center mt-4 img-thumbnail">@(hmproduct.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
+                <div class="col-md-4 mb-4 bg-success img-thumbnail rounded-3 ">
+                    <div id="card-hmproducts" class="card h-100" data-aos="fade-up" data-aos-duration="800">
+                        <img id="img-hmproducts" src="/HandMade-IMGs/@hmproduct.ImageFileName" class="card-img-top mt-4 img-thumbnail rounded-pill" style="width: 100%; height: 50%;" alt="Product Image">
+                        <h5 class="card-title text-center mt-4 img-thumbnail bg-black text-white rounded-3">@(hmproduct.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
                         <p class="card-text text-center">@hmproduct.Brand</p>
                         <p class="card-text text-center text-capitalize">@hmproduct.Name</p>
                         <div class="border-3">
@@ -30,12 +36,34 @@
 
                         </div>
                         <p class="text-info text-capitalize mt-4 text-center">
-                            Send an email to the salesman
+                            <button class="btn btn-outline-info">
+                                <a class="btn btn-primary btn-sm" href="mailto:@hmproduct.Email">Send an Email</a>
+                            </button>
                         </p>
                         <div class="text-center">
-                            <a href="mailto:@hmproduct.Email">@hmproduct.Email</a>
+                            
+                            
 
                         </div>
+                        <div class="text-center">
+                            <p class="card-text">
+                            
+
+                                <i class="fas fa-phone"></i>
+                                @if (!string.IsNullOrEmpty(hmproduct.PhoneNumber))
+                                {
+                                    <button class="btn btn-outline-info">
+                                        <a class="btn btn-success btn-sm" href="tel:@hmproduct.PhoneNumber.Replace(" ", "")">Make a Call</a>
+                                    </button>
+                                    
+                                }
+                                else
+                                {
+                                    <span>Not Available</span>
+                                }
+                            </p>
+                        </div>
+
                     </div>
                 </div>
 
