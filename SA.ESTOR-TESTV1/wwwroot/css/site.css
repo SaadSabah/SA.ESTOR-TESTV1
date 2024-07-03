@@ -20,7 +20,7 @@ html {
 body {
     margin-bottom: 60px;
   /*  background-color:greenyellow;*/
-    border: 15px solid green;
+    border: 15px solid green; 
 }
 
 #logo:hover {
@@ -74,6 +74,12 @@ body {
     transition: transform 0.3s ease; /* Add a smooth transition */
     color: #007bff; /* Change text color to blue on hover */
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#img-hmproducts{
+  
+    
+    
 }
 
 #img-products:hover {

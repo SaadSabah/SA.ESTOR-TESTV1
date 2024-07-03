@@ -14,7 +14,7 @@
             <a class="btn btn-outline-success rounded-3" asp-controller="HandMProducts" asp-action="Create">New Product</a>
         </div>
     
-    <div class="container p-5">
+    <div class="container p-5 text-center">
         <p id="seller-info" class="text-xxl-center text-uppercase">Communicate directly with the sellers to buy their products</p>
     </div>
 
@@ -27,7 +27,21 @@
             {
                 <div class="col-md-4 mb-4 bg-success img-thumbnail rounded-3 ">
                     <div id="card-hmproducts" class="card h-100" data-aos="fade-up" data-aos-duration="800">
-                        <img id="img-hmproducts" src="/HandMade-IMGs/@hmproduct.ImageFileName" class="card-img-top mt-4 img-thumbnail rounded-pill" style="width: 100%; height: 50%;" alt="Product Image">
+
+                     
+
+
+
+                        <div class="container  ">
+                            <a href="@Url.Content("~/HandMade-IMGs/" + hmproduct.ImageFileName)">
+                                <img id="img-hmproducts" class="card-img-top img-thumbnail" src="/HandMade-IMGs/@hmproduct.ImageFileName"
+                                     
+                                 alt="Product Image">
+                            </a>
+                         </div> 
+                     
+                       
+
                         <h5 class="card-title text-center mt-4 img-thumbnail bg-black text-white rounded-3">@(hmproduct.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
                         <p class="card-text text-center">@hmproduct.Brand</p>
                         <p class="card-text text-center text-capitalize">@hmproduct.Name</p>

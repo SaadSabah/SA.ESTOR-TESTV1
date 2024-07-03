@@ -14,37 +14,60 @@
            
         </div>
     
-    <div class="container p-5 ">
+    <div class="container p-5  text-center">
         <p id="seller-info" class="text-xxl-center text-uppercase">Communicate directly with the sellers to buy their products</p>
     </div>
     
 </div>
 
-<div class="container bg-success border-5 p-5 img-thumbnail rounded-3">
+<div class="container bg-success border-5 p-5 img-thumbnail rounded-3 text-center">
     <div class="container-xxl border-3 img-thumbnail rounded-3">
         <div class="row bg-secondary img-thumbnail rounded-3">
             @foreach (var product in Model)
             {
-                <div class="col-md-4 mb-4 bg-black img-thumbnail">
+                <div class="col-md-4 mb-4 bg-black img-thumbnail text-center">
                     <div id="card-products" class="card h-100" data-aos="fade-up" data-aos-duration="800">
-                        <img id="img-products" src="/Products-Images/@product.ImageFileName" class="card-img-top mt-4 img-thumbnail rounded-3" style="width: 100%; height: 50%;" alt="Product Image">
-                        <h5 class="card-title text-center mt-4 img-thumbnail bg-black text-white rounded-3 ">@(product.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
-                        <p class="card-text text-center">@product.Brand</p>
-                        <p class="card-text text-center text-capitalize">@product.Name</p>
+                        <a href="@Url.Content("~/Products-Images/" + product.ImageFileName)">
+                        <img id="img-products" src="/Products-Images/@product.ImageFileName"
+                                 class="card-img-top img-thumbnail rounded-3" alt="Product Image">
+                        </a>
+                        <h5 class="card-title text-center mt-4 img-thumbnail bg-black text-white rounded-3">@(product.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE")))</h5>
+                        <p class="card-text text-center mt-2">@product.Brand</p>
+                        <p class="card-text text-center text-capitalize mt-2">@product.Name</p>
                         <div class="border-3">
-                            <p class="card-text text-center">@product.Description</p>
+                            <p class="card-text text-center mt-2">@product.Description</p>
 
                         </div>
                         <p class="text-info text-capitalize mt-4 text-center">
                             Send an email to the salesman
                         </p>
-                        <div class="text-center">
+                        <div class="text-center mt-2">
                             <button class="btn btn-outline-info">
                                 <a class="btn btn-primary btn-sm" href="mailto:@product.Email">Send an Email</a>
                             </button>
-                            
-
                         </div>
+                        
+                       <div class="card-footer mt-4">
+                           <div class="row">
+                               <div class="col-md-6 text-center">
+                                    <a class="d-flex align-items-center">
+                                        <button class="btn btn-outline-info"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></button>
+                                    </a>
+                               </div>
+                               <div class="col-md-6 text-center">
+                                    <a class="d-flex align-items-center">
+                                        <button class="btn btn-outline-info"><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></button>
+
+                                    </a>
+                               </div>
+                           </div>
+                       </div>
+                            
+                        
+                            
+                        
+                           
+                        
                     </div>
                 </div>
 
