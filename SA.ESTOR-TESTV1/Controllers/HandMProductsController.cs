@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SA.ESTOR_TESTV1.Models;
 using SA.ESTOR_TESTV1.Services;
+using System.Net.Http.Headers;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace SA.ESTOR_TESTV1.Controllers
 {
@@ -29,13 +33,22 @@ namespace SA.ESTOR_TESTV1.Controllers
             return View("HMProducts", hm_products);
 
         }
+		/*************/
 
-      
+		
 
 
 
 
-        [Authorize]
+
+
+
+		/*************/
+
+
+
+
+		[Authorize]
         public IActionResult Create()
         {
             return View();
